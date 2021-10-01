@@ -6,8 +6,8 @@
 
 class ArrayQueue:
     def __init__(self, size):
-        self.head = 0  # 队头元素下标
-        self.tail = 0  # 下一个插入位置
+        self.head = 0  # 队头元素下标, the rear pointer
+        self.tail = 0  # 下一个插入位置, the front pointer
         self._arr = [None] * size  # 实际存放数据的数组
 
     def is_empty(self):
@@ -41,24 +41,11 @@ class ArrayQueue:
 
 
 if __name__ == '__main__':
-    q = ArrayQueue(6)
+    q = ArrayQueue(10)
     q.enqueue(1)
     q.enqueue(2)
     q.enqueue(3)
     q.enqueue(4)
     q.enqueue(5)
-    print(q.dequeue())
-    print(q.dequeue())
-    print(q.dequeue())
-    print(q.dequeue())
-    print(q.dequeue())
-    q.enqueue(1)
-    q.enqueue(2)
-    q.enqueue(3)
-    q.enqueue(4)
-    q.enqueue(5)
-    print(q.dequeue())
-    print(q.dequeue())
-    print(q.dequeue())
-    print(q.dequeue())
-    print(q.dequeue())
+    for item in q:
+        print(q.dequeue())
